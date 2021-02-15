@@ -33,6 +33,21 @@ switch ($request_function) {
 			$responce['description'] = 'missing or non correct category id';
 		}
 		break;
+
+	case "update_title":
+		if(intval($request['cat_id']) && trim($request['new_title']) !='') {
+
+			$update = $PDO->updateCategoryTitle($request['cat_id'], $request['new_title']);
+			if(1) {
+				$responce['success'] = true;
+			}
+		} else {
+
+			$responce['success'] = false;
+			$responce['description'] = 'missing or non correct category id';
+		}
+		break;
+
 	
 	default:
 		$responce['success'] = false;
@@ -48,10 +63,12 @@ function markupCats($arr) {
 	$html = "<ul>";
 	foreach ($arr as $key => $value) {
 		$mark = "<span class='mark'></span>";
+		$edit = "<span class='edit'></span>";
+		$save = "<span class='save'></span>";
 		if(isset($value['no_sib'])) {
 			$mark = "";
 		}
-		$html.= "<li data-id={$value['id']}>{$value['title']} {$mark}</li>";
+		$html.= "<li data-id={$value['id']}> <span class='title'>{$value['title']}</span> <span class='controllers'>{$mark} {$edit} {$save} </span></li>";
 	}
 	$html.= "</ul>";
 

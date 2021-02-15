@@ -26,9 +26,12 @@ $RoyalCategories = $PDO->getAllRoyalCategories();
 			<div class='side-content'>
 				<ul>
 				<?
+				$mark = "<span class='mark'></span>";
+				$edit = "<span class='edit'></span>";
+				$save = "<span class='save'></span>";
 				foreach ($RoyalCategories as $key => $value) {
 
-					echo "<li data-id={$value['id']}>{$value['title']}<span class='mark'></span></li>";
+					echo "<li data-id={$value['id']}><span class='title'>{$value['title']}</span> <span class='controllers'>{$mark} {$edit} {$save} </span></li>";
 				}
 				?>
 				</ul>
