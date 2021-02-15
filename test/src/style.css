@@ -1,0 +1,68 @@
+
+body {
+	height: 100vh;
+	margin: 0;
+	//background-color: #3E3F40;
+}
+header {
+	background-color: red;
+	height: 40px;
+	margin-bottom: 20px;
+}
+
+aside {
+	width: 420px;
+	float: left;
+	height: 100vh;
+	padding-left: 20px;
+	
+}
+
+aside li {
+	padding: 5px;
+	cursor: pointer;
+	position: relative;
+}
+aside li .mark {
+	position: absolute;
+	right: 3px;
+	display: inline-block;
+    width: 20px;
+    height: 11px;
+    vertical-align: 0px;
+    background: transparent url(./m/arrow.png) 0 0 no-repeat;
+	background-position: 0px -12px;
+}
+aside li .mark.active {
+	background-position: 0px 0px;
+}
+#main {
+	float: left;
+}
+.main-content-wrapper {
+	padding: 0px 20px 0px 20px;
+}
+
+.main-content-header {
+	margin-bottom: 20px;
+}
+
+.main-content-cat-title {
+	text-decoration: underline;
+	margin-bottom: 10px;
+}
+
+.main-content {
+	display: grid;
+	grid-template-rows: 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-gap: 2vw;
+}
+.main-content .item-card-wrap {
+  padding: 10px;
+  background: gold;
+  text-align: center;
+}
+img {
+	height: 150px;
+}
