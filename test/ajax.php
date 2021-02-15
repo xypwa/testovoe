@@ -38,13 +38,13 @@ switch ($request_function) {
 		if(intval($request['cat_id']) && trim($request['new_title']) !='') {
 
 			$update = $PDO->updateCategoryTitle($request['cat_id'], $request['new_title']);
-			if(1) {
+			if($update) {
 				$responce['success'] = true;
 			}
 		} else {
 
 			$responce['success'] = false;
-			$responce['description'] = 'missing or non correct category id';
+			$responce['description'] = 'non-correct title';
 		}
 		break;
 
