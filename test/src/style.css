@@ -15,7 +15,7 @@ aside {
 	float: left;
 	height: 100vh;
 	padding-left: 20px;
-	
+
 }
 
 aside li {
@@ -35,6 +35,24 @@ aside li .mark {
 }
 aside li .mark.active {
 	background-position: 0px 0px;
+}
+aside li .edit {
+	position: absolute;
+	right: 26px;
+	display: inline-block;
+    width: 20px;
+    height: 16px;
+    vertical-align: 0px;
+    background: transparent url(./m/edit.png) 0 0 no-repeat;
+}
+aside li .save {
+	display: none;
+	position: absolute;
+	right: 26px;
+    width: 20px;
+    height: 16px;
+    vertical-align: 0px;
+    background: transparent url(./m/save.png) 0 0 no-repeat;
 }
 #main {
 	float: left;
