@@ -79,9 +79,11 @@ class PDO_lib {
     	
     }
 
-    //Other
+    //Edit
 
-    public function getPathTo($id) {
-
+    public function updateCategoryTitle($id, $title) {
+    	$query = 'UPDATE categories SET title=:title WHERE id=:id';
+    	$PDO = $this->PDO->prepare($query);
+    	$result = $PDO->execute(array('id'=>$id, 'title'=>$title));
     }
 } 
